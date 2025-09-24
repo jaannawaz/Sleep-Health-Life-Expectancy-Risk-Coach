@@ -1,0 +1,193 @@
+{
+  "classification": {
+    "xgboost": {
+      "cv_mean": 0.886271186440678,
+      "cv_std": 0.022184477504899817,
+      "test_accuracy": 0.9466666666666667,
+      "test_f1": 0.9465555555555557,
+      "test_auc": 0.994406779661017,
+      "confusion_matrix": [
+        [
+          14,
+          0,
+          1
+        ],
+        [
+          0,
+          44,
+          0
+        ],
+        [
+          3,
+          0,
+          13
+        ]
+      ],
+      "classification_report": {
+        "Insomnia": {
+          "precision": 0.8235294117647058,
+          "recall": 0.9333333333333333,
+          "f1-score": 0.875,
+          "support": 15.0
+        },
+        "None": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 44.0
+        },
+        "Sleep Apnea": {
+          "precision": 0.9285714285714286,
+          "recall": 0.8125,
+          "f1-score": 0.8666666666666667,
+          "support": 16.0
+        },
+        "accuracy": 0.9466666666666667,
+        "macro avg": {
+          "precision": 0.9173669467787114,
+          "recall": 0.9152777777777779,
+          "f1-score": 0.9138888888888889,
+          "support": 75.0
+        },
+        "weighted avg": {
+          "precision": 0.9494677871148459,
+          "recall": 0.9466666666666667,
+          "f1-score": 0.9465555555555557,
+          "support": 75.0
+        }
+      }
+    },
+    "random_forest": {
+      "cv_mean": 0.8894915254237288,
+      "cv_std": 0.023512193917022358,
+      "test_accuracy": 0.9733333333333334,
+      "test_f1": 0.9731652661064426,
+      "test_auc": 0.9984218455743878,
+      "confusion_matrix": [
+        [
+          13,
+          0,
+          2
+        ],
+        [
+          0,
+          44,
+          0
+        ],
+        [
+          0,
+          0,
+          16
+        ]
+      ],
+      "classification_report": {
+        "Insomnia": {
+          "precision": 1.0,
+          "recall": 0.8666666666666667,
+          "f1-score": 0.9285714285714286,
+          "support": 15.0
+        },
+        "None": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 44.0
+        },
+        "Sleep Apnea": {
+          "precision": 0.8888888888888888,
+          "recall": 1.0,
+          "f1-score": 0.9411764705882353,
+          "support": 16.0
+        },
+        "accuracy": 0.9733333333333334,
+        "macro avg": {
+          "precision": 0.9629629629629629,
+          "recall": 0.9555555555555556,
+          "f1-score": 0.9565826330532213,
+          "support": 75.0
+        },
+        "weighted avg": {
+          "precision": 0.9762962962962963,
+          "recall": 0.9733333333333334,
+          "f1-score": 0.9731652661064426,
+          "support": 75.0
+        }
+      }
+    },
+    "logistic": {
+      "cv_mean": 0.8827118644067795,
+      "cv_std": 0.03765289831315124,
+      "test_accuracy": 0.9333333333333333,
+      "test_f1": 0.9329971988795518,
+      "test_auc": 0.9899804386124779,
+      "confusion_matrix": [
+        [
+          12,
+          0,
+          3
+        ],
+        [
+          1,
+          43,
+          0
+        ],
+        [
+          0,
+          1,
+          15
+        ]
+      ],
+      "classification_report": {
+        "Insomnia": {
+          "precision": 0.9230769230769231,
+          "recall": 0.8,
+          "f1-score": 0.8571428571428571,
+          "support": 15.0
+        },
+        "None": {
+          "precision": 0.9772727272727273,
+          "recall": 0.9772727272727273,
+          "f1-score": 0.9772727272727273,
+          "support": 44.0
+        },
+        "Sleep Apnea": {
+          "precision": 0.8333333333333334,
+          "recall": 0.9375,
+          "f1-score": 0.8823529411764706,
+          "support": 16.0
+        },
+        "accuracy": 0.9333333333333333,
+        "macro avg": {
+          "precision": 0.9112276612276613,
+          "recall": 0.9049242424242424,
+          "f1-score": 0.905589508530685,
+          "support": 75.0
+        },
+        "weighted avg": {
+          "precision": 0.9357264957264958,
+          "recall": 0.9333333333333333,
+          "f1-score": 0.9329971988795518,
+          "support": 75.0
+        }
+      }
+    }
+  },
+  "regression": {
+    "xgboost_regressor": {
+      "cv_rmse_mean": 0.20814183488910415,
+      "cv_rmse_std": 0.1490031895188342,
+      "test_mse": 0.00871200766414404,
+      "test_rmse": 0.09333813617243511,
+      "test_mae": 0.02282068319618702,
+      "test_r2": 0.9942252039909363
+    },
+    "rf_regressor": {
+      "cv_rmse_mean": 0.21674620751335283,
+      "cv_rmse_std": 0.12350698789885066,
+      "test_mse": 0.019008224539346575,
+      "test_rmse": 0.1378703178329062,
+      "test_mae": 0.04579534391534388,
+      "test_r2": 0.9874002753907819
+    }
+  }
+}

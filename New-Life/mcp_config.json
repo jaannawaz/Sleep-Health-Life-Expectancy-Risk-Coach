@@ -1,0 +1,72 @@
+{
+  "mcpServers": {
+    "sleep-health-coach": {
+      "command": "python",
+      "args": ["src/mcp_tools/sleep_health_mcp_server.py"],
+      "env": {
+        "PYTHONPATH": ".",
+        "LOG_LEVEL": "INFO"
+      },
+      "description": "Sleep Health & Life Expectancy Risk Coach - Comprehensive sleep disorder prediction and medical analysis",
+      "version": "1.0.0",
+      "capabilities": [
+        "Individual sleep disorder prediction with 97.3% accuracy",
+        "WHO population health context for 183 countries", 
+        "Groq-powered medical explanations and clinical reasoning",
+        "Risk calibration with population benchmarking",
+        "Multi-country risk comparison",
+        "Prediction monitoring and drift detection"
+      ],
+      "tools": [
+        {
+          "name": "sleep.predict",
+          "description": "Predict sleep disorder risk and sleep quality for an individual",
+          "category": "health-assessment"
+        },
+        {
+          "name": "context.who_indicators", 
+          "description": "Get WHO population health indicators and context for a country",
+          "category": "population-health"
+        },
+        {
+          "name": "explain.risk_factors",
+          "description": "Generate medical explanation for sleep health risk factors",
+          "category": "medical-explanation"
+        },
+        {
+          "name": "monitor.log_prediction",
+          "description": "Log prediction for monitoring and drift detection", 
+          "category": "monitoring"
+        },
+        {
+          "name": "compare.countries",
+          "description": "Compare sleep health risk across multiple countries",
+          "category": "comparative-analysis"
+        },
+        {
+          "name": "system.status",
+          "description": "Get system status and component availability",
+          "category": "system-health"
+        }
+      ],
+      "requirements": [
+        "Python 3.8+",
+        "groq>=0.31.0",
+        "mcp>=0.9.0", 
+        "pandas>=2.0.0",
+        "scikit-learn>=1.3.0",
+        "xgboost>=3.0.0"
+      ],
+      "data_sources": [
+        "Sleep Health & Lifestyle Dataset (synthetic, 374 records)",
+        "WHO Life Expectancy Data (real, 183 countries, 2000-2015)"
+      ],
+      "performance": {
+        "prediction_time": "<500ms",
+        "complete_assessment": "<9000ms",
+        "who_context_retrieval": "<100ms",
+        "medical_explanation": "<3000ms"
+      }
+    }
+  }
+}

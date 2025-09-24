@@ -1,0 +1,28 @@
+{
+  "xgboost": {
+    "Gender": 0.02282690815627575,
+    "Age": 0.016415316611528397,
+    "Occupation": 0.0719386637210846,
+    "Sleep Duration": 0.017188647761940956,
+    "Quality of Sleep": 0.021058743819594383,
+    "Physical Activity Level": 0.04502411186695099,
+    "Stress Level": 0.015356737188994884,
+    "BMI Category": 0.5764256119728088,
+    "Blood Pressure": 0.13853579759597778,
+    "Heart Rate": 0.048450976610183716,
+    "Daily Steps": 0.0267784520983696
+  },
+  "random_forest": {
+    "Gender": 0.0043111413738475745,
+    "Age": 0.11144856560903724,
+    "Occupation": 0.16677624181716819,
+    "Sleep Duration": 0.10464117017519971,
+    "Quality of Sleep": 0.019789199158496296,
+    "Physical Activity Level": 0.06930024901369918,
+    "Stress Level": 0.021034444532381222,
+    "BMI Category": 0.22368663799670888,
+    "Blood Pressure": 0.1562016613389647,
+    "Heart Rate": 0.05058006931126978,
+    "Daily Steps": 0.07223061967322725
+  }
+}

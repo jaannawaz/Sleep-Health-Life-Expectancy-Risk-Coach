@@ -1,0 +1,104 @@
+{
+  "sleep_health_mcp_tools": {
+    "version": "1.0.0",
+    "description": "Comprehensive sleep health assessment tools for AI assistants",
+    "server_config": {
+      "name": "sleep-health-coach",
+      "command": "python src/mcp_tools/sleep_health_mcp_server.py",
+      "working_directory": "."
+    },
+    "tools": {
+      "sleep.predict": {
+        "purpose": "Primary assessment tool - predicts sleep disorders and quality",
+        "input": "User health profile (age, BMI, sleep habits, etc.)",
+        "output": "Disorder prediction, quality score, risk level, recommendations",
+        "response_time": "<500ms",
+        "accuracy": "97.3% for sleep disorder classification",
+        "use_cases": [
+          "Individual health assessment",
+          "Risk screening",
+          "Lifestyle recommendation generation"
+        ]
+      },
+      "context.who_indicators": {
+        "purpose": "Population health context from WHO data",
+        "input": "Country name, trend analysis preferences",
+        "output": "Health indicators, population benchmarks, trends",
+        "response_time": "<100ms",
+        "coverage": "183 countries, 2000-2015 data",
+        "use_cases": [
+          "Population health research",
+          "Country health comparisons",
+          "Epidemiological context"
+        ]
+      },
+      "explain.risk_factors": {
+        "purpose": "Medical explanations via Groq AI",
+        "input": "Prediction results, user data, explanation type",
+        "output": "Clinical reasoning, risk analysis, recommendations",
+        "response_time": "<3000ms",
+        "model": "openai/gpt-oss-120b via Groq",
+        "use_cases": [
+          "Patient education",
+          "Clinical decision support",
+          "Health literacy improvement"
+        ]
+      },
+      "monitor.log_prediction": {
+        "purpose": "Prediction logging and monitoring",
+        "input": "Assessment results, user/session IDs",
+        "output": "Logging confirmation, monitoring insights",
+        "response_time": "<50ms",
+        "storage": "JSONL files with daily rotation",
+        "use_cases": [
+          "Model performance monitoring",
+          "Drift detection",
+          "Usage analytics"
+        ]
+      },
+      "compare.countries": {
+        "purpose": "Multi-country risk comparison",
+        "input": "User profile, list of countries",
+        "output": "Risk levels by country, comparative analysis",
+        "response_time": "<2000ms",
+        "limit": "10 countries per request",
+        "use_cases": [
+          "Migration health planning",
+          "Travel health assessment",
+          "Global health research"
+        ]
+      },
+      "system.status": {
+        "purpose": "System health and availability check",
+        "input": "None required",
+        "output": "Component status, performance metrics",
+        "response_time": "<100ms",
+        "monitoring": "Real-time component health",
+        "use_cases": [
+          "System monitoring",
+          "Troubleshooting",
+          "Capacity planning"
+        ]
+      }
+    },
+    "integration_guide": {
+      "setup": [
+        "1. Install requirements: pip install -r requirements.txt",
+        "2. Configure Groq API key in config/config.py",
+        "3. Start MCP server: python src/mcp_tools/sleep_health_mcp_server.py",
+        "4. Configure AI assistant with mcp_config.json"
+      ],
+      "usage_patterns": [
+        "Complete Assessment: sleep.predict \u2192 explain.risk_factors \u2192 monitor.log_prediction",
+        "Population Research: context.who_indicators \u2192 compare.countries",
+        "System Monitoring: system.status (periodic health checks)"
+      ],
+      "best_practices": [
+        "Always validate input data before MCP calls",
+        "Handle errors gracefully with fallback explanations",
+        "Log predictions for monitoring and improvement",
+        "Use country comparison sparingly due to processing time"
+      ]
+    }
+  }
+}

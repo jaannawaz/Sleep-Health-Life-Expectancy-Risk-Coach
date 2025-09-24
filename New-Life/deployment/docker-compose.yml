@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  sleep-health-api:
+    build: .
+    container_name: sleep-health-api
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - PYTHONPATH=/app
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  sleep-health-dashboard:
+    build: 
+      context: .
+      dockerfile: Dockerfile.streamlit
+    container_name: sleep-health-dashboard
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data:ro
+    restart: unless-stopped
+    depends_on:
+      - sleep-health-api
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  sleep-health-mcp:
+    build: .
+    container_name: sleep-health-mcp
+    ports:
+      - "3000:3000"
+    environment:
+      - PYTHONPATH=/app
+      - MCP_PORT=3000
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data:ro
+    restart: unless-stopped
+    command: ["python", "src/mcp_tools/sleep_health_mcp_server.py"]
+
+volumes:
+  sleep_health_logs:
+  sleep_health_data:
+
+networks:
+  default:
+    name: sleep-health-network
