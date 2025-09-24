@@ -81,7 +81,7 @@ New-Life/
 
 1. **Clone and navigate to project**:
    ```bash
-   cd /Users/jaan/Desktop/New-Life
+   cd ~/New-Life
    ```
 
 2. **Activate virtual environment**:
@@ -348,4 +348,4 @@ Our data analysis revealed critical patterns for model development:
 
 ---
 
-**Status**: 🎉 **PROJECT COMPLETE** ✅ | All 6 Milestones Achieved | Production Ready 🚀 | **Ready for Deployment** 🌟
+**Status**: 🎉 **PROJECT COMPLETE** ✅ | Production Ready 🚀 | **Ready for Deployment** 🌟
